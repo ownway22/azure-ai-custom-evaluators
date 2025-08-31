@@ -107,12 +107,14 @@ azure-ai-custom-evaluators/
 
 ## 輸出結果
 - 批次評估會在專案根目錄輸出 `myevalresults.json`。
-- 若 `.env` 內提供且有效的 `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT`，結果也會嘗試上傳至 Azure AI Studio 專案。
+- 若 `.env` 內提供且有效的 `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT`，結果也會嘗試上傳至 Azure AI Foundry 專案。
+  - 完成後，可前往 Azure AI Foundry 專案中看到下圖
+    ![complete](azure-ai-get-language-endpoint-and-key.png)
   - 若上傳失敗（例如 404/Resource not found），指令會顯示警告並自動改為僅本機輸出，不會中斷流程。
 
 ## 疑難排解（Troubleshooting）
 - 遙測上傳 404／Resource not found：
-  - 檢查 `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` 是否為有效的 HTTP(S) URL，且確實指向你要上傳的 Azure AI Studio 專案。
+  - 檢查 `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` 是否為有效的 HTTP(S) URL，且確實指向你要上傳的 Azure AI Foundry 專案。
   - 若仍失敗，指令會自動退回本機輸出 `myevalresults.json`。
 
 - Helpfulness 客製指標失敗或回傳空分數：
