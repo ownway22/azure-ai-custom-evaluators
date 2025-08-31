@@ -1,0 +1,35 @@
+---
+name: Helpfulness Evaluator
+description: Rates how helpful and actionable an answer is.
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    azure_deployment: ${env:MODEL_EVALUATION_DEPLOYMENT_NAME}
+    api_key: ${env:AZURE_AI_KEY}
+  parameters:
+    temperature: 0.1
+inputs:
+  response:
+    type: string
+outputs:
+  score:
+    type: int
+  explanation:
+    type: string
+---
+
+system:
+You are evaluating the helpfulness of an answer. Rate it 1 to 5:
+1 – Not helpful
+3 – Moderately helpful
+5 – Extremely helpful and actionable
+
+Return JSON like:
+{"score": <1-5>, "reason": "<short explanation>"}
+
+Here is the answer to evaluate:
+generated_query: {{response}}
+output:
+```
