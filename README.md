@@ -39,10 +39,8 @@ azure-ai-custom-evaluators/
 - Azure AI Foundry 資源
     - 前往 Azure AI Foundry Portal：[https://ai.azure.com/](https://ai.azure.com/) 
     - 新增或找到既有的 AI 專案，並進入專案頁面
-    - 前往「Endpoints and keys」或「端點與金鑰」查看，如下圖所示
-        ![complete](azure-ai-get-language-endpoint-and-key.png)
-
-    - 取得 Azure AI Services 的 Endpoint 與 Key，將於步驟五中使用
+    - 前往「Endpoints and keys」或「端點與金鑰」查看
+    - 取得下列 5 個變數，將於步驟五中使用
         - `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT`
         - `AZURE_OPENAI_ENDPOINT`
         - `AZURE_AI_KEY`
@@ -75,7 +73,7 @@ azure-ai-custom-evaluators/
 
 ## 步驟五：準備環境變數
 - 將 `.env_example` 另存為 `.env`
-- 貼上步驟一的5個環境變數
+- 貼上步驟一的 5 個環境變數
 
 ## 步驟六：執行範例與評估
 你可以選擇單獨執行客製指標的範例，或直接執行批次評估。
@@ -109,7 +107,7 @@ azure-ai-custom-evaluators/
 - 批次評估會在專案根目錄輸出 `myevalresults.json`。
 - 若 `.env` 內提供且有效的 `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT`，結果也會嘗試上傳至 Azure AI Foundry 專案。
   - 完成後，可前往 Azure AI Foundry 專案中看到下圖
-    ![complete](azure-ai-get-language-endpoint-and-key.png)
+    ![complete](azure-ai-custom-metrics-upload.png)
   - 若上傳失敗（例如 404/Resource not found），指令會顯示警告並自動改為僅本機輸出，不會中斷流程。
 
 ## 疑難排解（Troubleshooting）
